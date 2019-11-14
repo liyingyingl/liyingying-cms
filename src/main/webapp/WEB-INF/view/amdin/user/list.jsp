@@ -18,7 +18,7 @@ function updateStatus(userId,status){
 				}else{
 					alert(data.errorMsg);
 				}
-			},
+			}
 	)	
 }
 
