@@ -2,9 +2,18 @@ package com.liyingying.common;
 
 import java.io.Serializable;
 
-public class MsgResult implements Serializable{
+/**
+ * 用于前后端交互的协议
+ * @author lyy
+ *
+ */
+public class MsgResult implements Serializable {
 	
-private static final long serialVersionUID = -3270650550789341492L;
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3270650550789341492L;
 	
 	int result;
 	String errorMsg;
@@ -38,5 +47,8 @@ private static final long serialVersionUID = -3270650550789341492L;
 	public void setData(Object data) {
 		this.data = data;
 	}
-
+	
+	
+	
+	
 }

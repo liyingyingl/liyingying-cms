@@ -5,13 +5,23 @@ import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.liyingying.bean.User;
 import com.liyingying.common.ConstantClass;
 import com.liyingying.dao.UserMapper;
+import com.liyingying.bean.User;
+import com.liyingying.service.UserService;
+
+/**
+ * 
+ * @author lyy
+ *
+ */
 @Service
+//@Component
 public class UserServiceImpl implements UserService {
+	
 	@Autowired
-	private UserMapper userMapper;
+	UserMapper userMapper;
+
 	@Override
 	public PageInfo<User> getPageList(String name, Integer page) {
 		// TODO Auto-generated method stub

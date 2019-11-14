@@ -65,7 +65,7 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-bottom" 
 role="navigation">
-	<div align="center"> <font color="blue" size="5"> ----八维大数据学院1707D--- </font> </div>
+	<div align="center"> <font color="yellow" size="5"> ----八维大数据学院1707D--- </font> </div>
 </nav>
 
 <script type="text/javascript">

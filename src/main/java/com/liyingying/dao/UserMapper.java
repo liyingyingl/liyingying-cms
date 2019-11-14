@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Update;
 import com.liyingying.bean.User;
 
 public interface UserMapper {
+
 	
 	List<User> list(String name);
 
@@ -16,4 +17,5 @@ public interface UserMapper {
 	@Update("UPDATE cms_user SET locked=${status} WHERE id=${userId}")
 	int updateStatus(@Param("userId") Integer userId, 
 			@Param("status") int status);
+
 }
