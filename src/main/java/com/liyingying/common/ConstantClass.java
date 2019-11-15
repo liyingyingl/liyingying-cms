@@ -7,6 +7,7 @@ package com.liyingying.common;
  */
 public class ConstantClass {
 
+	
 	/**
 	 * 普通用户
 	 */
