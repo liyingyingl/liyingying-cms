@@ -7,6 +7,7 @@ import com.liyingying.bean.Article;
 
 public interface ArticleService {
 
+	
 	/**
 	 * 获取最新文章
 	 * @param i  获取的个数

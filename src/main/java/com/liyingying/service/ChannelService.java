@@ -10,3 +10,4 @@ public interface ChannelService {
 	List<Channel> list();
 
 }
+

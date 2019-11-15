@@ -23,3 +23,4 @@ public interface UserService {
 	int updateStatus(Integer userId, int status);
 
 }
+

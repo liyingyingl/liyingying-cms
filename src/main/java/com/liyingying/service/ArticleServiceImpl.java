@@ -20,6 +20,7 @@ import com.liyingying.service.ArticleService;
 @Service
 public class ArticleServiceImpl  implements ArticleService{
 	
+	
 	@Autowired
 	ArticleMapper articleMapper;
 	
