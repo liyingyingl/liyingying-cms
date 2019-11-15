@@ -16,6 +16,7 @@ public class ArticleController {
 	@Autowired
 	ArticleService articleService;
 	
+	
 	@RequestMapping("showdetail")
 	public String showDetail(HttpServletRequest request,Integer id) {
 		

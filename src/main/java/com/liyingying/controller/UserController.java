@@ -16,4 +16,5 @@ public class UserController {
 		request.setAttribute("info", "hello");
 		return "user/test";
 	}
+	
 }

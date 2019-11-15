@@ -26,7 +26,6 @@ public class IndexController {
 	@Autowired
 	ChannelService channelService;
 	
-	
 	@Autowired
 	CategoryService categoryService;
 	

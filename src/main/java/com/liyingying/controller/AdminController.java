@@ -18,7 +18,6 @@ import com.liyingying.service.UserService;
  * @author lyy
  *
  */
-
 @Controller
 @RequestMapping("admin")
 public class AdminController {
