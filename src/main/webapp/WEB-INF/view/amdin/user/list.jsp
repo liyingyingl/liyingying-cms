@@ -4,9 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 
 <script type="text/javascript">
-<!--
-	
-//-->
+
 function updateStatus(userId,status){
 	$.post("/admin/lockuser",
 			{userId:userId,status:status},

@@ -12,6 +12,7 @@
  <script type="text/javascript" src="/resource/js/jquery-3.2.1.js"></script> 
  <script type="text/javascript" src="/resource/bootstrap/js/bootstrap.js"></script>
  <title>有花堪折直须折</title>
+ 
 <style type="text/css">
 	.menu li{
 		font-size:26px;
