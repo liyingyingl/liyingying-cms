@@ -18,4 +18,5 @@ public interface UserMapper {
 	int updateStatus(@Param("userId") Integer userId, 
 			@Param("status") int status);
 
+	
 }

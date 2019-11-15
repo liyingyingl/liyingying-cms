@@ -15,6 +15,7 @@ public interface ArticleMapper {
 	 */
 	List<Article> newList(int i);
 
+	
 	/**
 	 * 获取热门文章
 	 * @return
