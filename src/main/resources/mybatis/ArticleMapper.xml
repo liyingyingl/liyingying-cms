@@ -17,6 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		ORDER BY created DESC  limit ${value}
 	</select>
 	
+	
 	<select id="hostList" resultMap="articleMapper" >
 		SELECT id,title,picture,channel_id,category_id,user_id,hits,commentCnt,created
 			FROM cms_article 
