@@ -13,5 +13,4 @@ public interface CategoryService {
 	 */
 	List<Category> listByChannelId(int chnId);
 
-	
 }

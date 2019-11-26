@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
-    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -12,7 +10,6 @@
  <script type="text/javascript" src="/resource/js/jquery-3.2.1.js"></script> 
  <script type="text/javascript" src="/resource/bootstrap/js/bootstrap.js"></script>
  <title>有花堪折直须折</title>
- 
 <style type="text/css">
 	.menu li{
 		font-size:26px;
@@ -21,6 +18,19 @@
 	.menu li:hover{
 		background:gray;
 	}
+	.ex {
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+		}
+		div {
+		background: 3399FF;
+	}
+	
+	.fl{
+		font-size:18px;
+		color: #FF9900;
+	}
 	
 	
 </style>
@@ -28,70 +38,44 @@
 </head>
 
 <body>
+<body style="background:#3399FF;"> 
+
 <!-- 导航条 -->
-<nav class="navbar navbar-default">
- 
-  	
-  	<!-- logo -->
-  	<div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" src="/resource/images/logo.png">
-      </a>
-      
-      
-      
-    </div>
-    
-      <form class="navbar-form"  style="float:none;text-align:center;">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      
-    <!-- 搜索框和右侧登录信息 -->
-    <div class="collapse navbar-collapse" style="float:none;text-align:right;"  id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        
-      </ul>
-      
-    
-      
-      <ul class="nav navbar-nav navbar-right" >
-        <li><a href="#"><img width="40px" height="40px" src="/resource/images/donghua.gif"/> </a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          		张三 <span class="caret"></span></a>
-          <ul class="dropdown-menu ">
-            <li><a href="#">个人中心</a></li>
-            <li><a href="#">个人设置</a></li>
-            <li><a href="#">修改头像</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">退出登录</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-    
- 
+<nav class="navbar navbar-default" style="background:pink">
+	<%@include  file="common/top.jsp" %>
 </nav>
+<div class="container-fluid" style="background: url(/pic/24.png) no-repeat; width:100%; height:100%;overflow: hidden;background-size:cover;" >
+&nbsp;<br/>
+&nbsp;
+</div>
+
+<!-- <div class="progress progress-striped ">
+        <div class="progress-bar progress-bar-warning" role="progressbar"
+                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                 style="width: 20%;">
+                <span class="sr-only">20% 完成（警告）</span>
+        </div>
+</div> -->
+
+
 
 <div class="container-fluid" >
 	<div class="container" style="minheight:200px" >
 		<div class="row">
 			<!-- 左侧菜单 -->
-			<div class="col-md-2" style="minheight:200px;margin-top:20px" >
+			<div class="col-md-2" style="max:200px;margin-top:20px" >
 				
 					<ul class="list-group menu">
 						<li class="list-group-item active" >热门文章</li>
 						<c:forEach items="${channels}" var="channel" varStatus="index">
-					    	<li class="list-group-item" data="/indexchn?id=${channel.id}">${channel.name}</li>
+					    	<li class="list-group-item" data="/channel?chnId=${channel.id}" >${channel.name}</li>
+					   
 					    </c:forEach>
 					</ul>
 			</div>
 			
 			<!-- 中间的内容 -->
-			<div class="col-md-8" style="background:white;minheight:200px" >
+			<div class="col-md-8 thumbnail"  style="border-radius:12px; margin-top:20px;margin-bottom:20px; background:white;minheight:200px" >
 				<div>
 						<hr>
 						
@@ -105,15 +89,15 @@
 							<li data-target="#myCarousel" data-slide-to="2"></li>
 						</ol>   
 						<!-- 轮播（Carousel）项目 -->
-						<div class="carousel-inner">
+						<div class="carousel-inner thumbnail" style="border-radius:12px;">
 							<div class="item active">
-								<img height="300px" src="/resource/images/77.jpg" alt="First slide">
+								<img class="img-rounded" src="/pic/23.png" style="border-radius:24px; align:center;width:800px; height:400px;" alt="First slide">
 							</div>
 							<div  class="item">
-								<img height="300px" src="/resource/images/19.jpg" alt="Second slide">
+								<img class="img-rounded" src="/pic/19.gif" style="border-radius:24px; width:800px; height:400px;" alt="Second slide">
 							</div>
 							<div class="item">
-								<img height="300px" src="/resource/images/15.jpg" alt="Third slide">
+								<img class="img-rounded" src="/pic/009.gif" style="border-radius:24px; width:800px; height:400px;" alt="Third slide">
 							</div>
 						</div>
 						<!-- 轮播（Carousel）导航 -->
@@ -130,9 +114,9 @@
 					<!-- 放文章的列表 -->
 					<div >
 						<c:forEach items="${hotList.list}" var="article" >
-						<div class=row>
-							<hr>
-							<div class="col-md-2"><img height="80px" width="80px" src="/pic/${article.picture}"></div>
+						<div class=row style="padding-bottom:1px">
+							<hr width="88%" style="background-color:pink;border:none;height:1px">
+							<div class="col-md-2" style="text-align:right"><img height="80px" width="80px" src="/pic/${article.picture}" onerror="this.src='/resource/images/default-cat.png'" class="img-rounded"></div>
 							<div class="col-md-10">
 								<a href="javascript:showArticle(${article.id})">${article.title}</a>
 								<br>
@@ -145,7 +129,8 @@
 							
 						</div>
 						</c:forEach>
-						<div class="row">
+						<div class="row" style="text-align: center;padding-top:1px">
+							<hr width="88%" style="background-color:red;border:none;height:1px">
 							<ul class="pagination">
 								    <li><a href="/index?page=${hotList.prePage}">&laquo;</a></li>
 								    <c:forEach begin="${hotList.pageNum-2 > 1 ? hotList.pageNum-2:1}" end="${hotList.pageNum+2 > hotList.pages ? hotList.pages:hotList.pageNum+2}" varStatus="index">    		
@@ -166,13 +151,28 @@
 			<!-- 中间的内容结束 -->
 			
 			
-			<div class="col-md-2" style="minheight:200px" >
+			<div class="col-md-2" style=" margin-top:30px ;minheight:200px" >
+				
 				<div class="panel panel-primary">
 					<div class="panel-heading">
-						<h3 class="panel-title">面板标题</h3>
+						<h3 class="panel-title">图片文章</h3>
 					</div>
 					<div class="panel-body">
-						这是一个基本的面板
+						<c:forEach items="${imgArticles}" var="article" varStatus="index"> 
+							<a href="javascript:showArticle(${article.id})">${index.index}. ${article.title}</a>
+							<br/>
+						</c:forEach>
+					</div>
+				</div>
+				
+				
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">公告</h3>
+					</div>
+					<div class="panel-body">
+						<a href="https://www.4hw.com.cn/p/405235.html">1.肖战要演新电视剧了</a><br>
+						<a href="https://y.qq.com/n/yqq/singer/004OG5IM1BYEI3.html">2.王一博的要发布新歌了</a>
 					</div>
 				</div>
 				
@@ -180,11 +180,14 @@
 					<div class="panel-heading">
 						<h3 class="panel-title">最新文章</h3>
 					</div>
-					<div class="panel-body">
+					<div class="panel-body ex">
+					
 						<c:forEach items="${newArticles}" var="article" varStatus="index">
-							${index.index+1} . <a>${article.title}</a>
+						
+							${index.index+1} . <a href="/article/showdetail?id=${index.index+25}">${article.title}</a>
 							<br/>
 						</c:forEach>
+					
 					</div>
 				</div>
 			
@@ -197,17 +200,29 @@
 
 
 
+
 <!-- 底部 -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-  </div>
+<nav class="navbar navbar-default" style="background:yellow">
+<div class="container-fluid" style="text-align:center">
+ 	<div class="row" style="margin-top:13px">
+ 	    <div class="col-md-1"><a href="sohu.com" class="fl"></a></div>
+ 			<c:forEach items="${linkList}" var ="link">
+ 				<div class="col-md-1"><a href="${link.url}" class="fl"> ${link.name}</a></div>
+ 			</c:forEach>
+ 			
+ 		<div class="col-md-1"><a href="sohu.com" class="fl"></a></div>
+ 	</div>
+ 	
+ </div>
+   <hr width="90%"/>
+ 	<%@include file="./common/footer.jsp"  %>
 </nav>
-
+<script type="text/javascript" src="/resource/js/cms_index.js"></script>
 <script type="text/javascript">
-	function showArticle(articleId){
-		window.open("/article/showdetail?id="+articleId)
-	}
-</script>
 
+
+
+
+</script>
 </body>
 </html>

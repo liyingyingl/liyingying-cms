@@ -13,6 +13,7 @@ import com.liyingying.common.ConstantClass;
 public class User implements Serializable {
 	
 	
+	
 	/**
 	 * 
 	 */

@@ -10,7 +10,6 @@ import java.io.Serializable;
 public class MsgResult implements Serializable {
 	
 	
-	
 	/**
 	 * 
 	 */

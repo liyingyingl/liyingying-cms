@@ -725,7 +725,7 @@ $.validator.addMethod( "greaterThanEqual", function( value, element, param ) {
  */
 $.validator.addMethod( "iban", function( value, element ) {
 
-	// Some quick simple tests to prevent needless work
+	// Some quick sImple tests to prevent needless work
 	if ( this.optional( element ) ) {
 		return true;
 	}

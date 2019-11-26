@@ -3,6 +3,7 @@ package com.liyingying.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,9 +14,11 @@ import com.github.pagehelper.PageInfo;
 import com.liyingying.bean.Article;
 import com.liyingying.bean.Category;
 import com.liyingying.bean.Channel;
+import com.liyingying.bean.Link;
 import com.liyingying.service.ArticleService;
 import com.liyingying.service.CategoryService;
 import com.liyingying.service.ChannelService;
+import com.liyingying.service.LinkService;
 
 @Controller
 public class IndexController {
@@ -26,12 +29,16 @@ public class IndexController {
 	@Autowired
 	ChannelService channelService;
 	
+	
 	@Autowired
 	CategoryService categoryService;
 	
 	
 	@Autowired
 	ArticleService articleService;
+	
+	@Autowired
+	LinkService linkService;
 
 	
 	/**
@@ -46,6 +53,11 @@ public class IndexController {
 			@RequestParam(defaultValue = "1") int chnId,
 			@RequestParam(defaultValue = "0") int categoryId,
 			@RequestParam(defaultValue = "1") int page) {
+		
+		
+		// 回传参数数值
+		request.setAttribute("chnId", chnId);
+		request.setAttribute("categoryId", categoryId);
 		
 		//获取所有的频道
 		List<Channel> channels = channelService.list();
@@ -63,14 +75,18 @@ public class IndexController {
 		return "channelindex";
 	
 	}
+	
+	
 		
 	/**
 	 * 
 	 * @return
 	 */
 	@RequestMapping(value = { "index", "/" })
-	public String index(HttpServletRequest request, @RequestParam(defaultValue = "1") int page) {
+	public String index(HttpServletRequest request,HttpServletResponse reponse, @RequestParam(defaultValue = "1") int page) {
 
+		
+		
 		//获取所有的频道
 		List<Channel> channels = channelService.list();
 		request.setAttribute("channels", channels);
@@ -79,14 +95,17 @@ public class IndexController {
 		
 		List<Article> newArticles = articleService.getNewArticles(5);
 		
-		request.setAttribute("hotList", hotList);
+		// 获取最新图片文章
+		List<Article> imgArticles = articleService.getImgArticles(10);
+		
+		// 友情链接
+	   PageInfo<Link> info=  linkService.list(1);
+	   List<Link> linkList =  info.getList();
+	   
+	   	request.setAttribute("hotList", hotList);
 		request.setAttribute("newArticles", newArticles);
-		
-		
-		
-		
-		//
-		
+		request.setAttribute("imgArticles", imgArticles);
+		request.setAttribute("linkList", linkList);
 		return "index";
 	}
 

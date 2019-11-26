@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.liyingying.cms</groupId>
+  <groupId>com.liyingying</groupId>
   <artifactId>liyingying-cms</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
@@ -34,14 +34,13 @@
 	
   <dependencies>
   
-  	<!--  自己的工具类  -->
-  	<!-- <dependency>
+  	<!--  自己的工具类  --> 
+  	<dependency>
 			<groupId>com.liyingying</groupId>
 			<artifactId>liyingyinng_utils</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
-		</dependency> -->
-  	
+  	</dependency>
   	<!-- spring 及springMVC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -258,8 +257,8 @@
 
 		<!-- 富文本编辑器使用该文件上传 -->
 		<dependency>
-			<groupId>com.googlecode.json-simple</groupId>
-			<artifactId>json-simple</artifactId>
+			<groupId>com.googlecode.json-sImple</groupId>
+			<artifactId>json-sImple</artifactId>
 			<version>1.1.1</version>
 		</dependency>
 		
@@ -268,6 +267,7 @@
 			<artifactId>gson</artifactId>
 			<version>2.8.5</version>
 		</dependency>
+
 		
   </dependencies>
   
@@ -301,7 +301,7 @@
 						<host>localhost</host>
 					</httpConnector>
 					<contextHandlers>
-						<!-- <contextHandler implementation="org.eclipse.jetty.webapp.WebAppContext"> 
+						<!-- <contextHandler Implementation="org.eclipse.jetty.webapp.WebAppContext"> 
 							<contextPath>/pic</contextPath> <baseResource>d:/pic/</baseResource> </contextHandler> -->
 						<jettyWebAppContext>
 							<!-- 虚拟路径 -->

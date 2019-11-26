@@ -894,7 +894,7 @@ function createCache() {
 	var keys = [];
 
 	function cache( key, value ) {
-		// Use (key + " ") to avoid colzhangsanon with native prototype properties (see Issue #157)
+		// Use (key + " ") to avoid collision with native prototype properties (see Issue #157)
 		if ( keys.push( key + " " ) > Expr.cacheLength ) {
 			// Only keep the most recent entries
 			delete cache[ keys.shift() ];
@@ -2066,7 +2066,7 @@ Expr = Sizzle.selectors = {
 		// Contents
 		"empty": function( elem ) {
 			// http://www.w3.org/TR/selectors/#empty-pseudo
-			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
+			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; bean ref: 5),
 			//   but not by others (comment: 8; processing instruction: 7; etc.)
 			// nodeType < 6 works because attributes (2) do not appear as children
 			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
@@ -3466,7 +3466,7 @@ jQuery.Callbacks = function( options ) {
 };
 
 
-function Identity( v ) {
+function Idbean( v ) {
 	return v;
 }
 function Thrower( ex ) {
@@ -3608,7 +3608,7 @@ jQuery.extend( {
 										if ( special ) {
 											then.call(
 												returned,
-												resolve( maxDepth, deferred, Identity, special ),
+												resolve( maxDepth, deferred, Idbean, special ),
 												resolve( maxDepth, deferred, Thrower, special )
 											);
 
@@ -3620,9 +3620,9 @@ jQuery.extend( {
 
 											then.call(
 												returned,
-												resolve( maxDepth, deferred, Identity, special ),
+												resolve( maxDepth, deferred, Idbean, special ),
 												resolve( maxDepth, deferred, Thrower, special ),
-												resolve( maxDepth, deferred, Identity,
+												resolve( maxDepth, deferred, Idbean,
 													deferred.notifyWith )
 											);
 										}
@@ -3632,7 +3632,7 @@ jQuery.extend( {
 
 										// Only substitute handlers pass on context
 										// and multiple values (non-spec behavior)
-										if ( handler !== Identity ) {
+										if ( handler !== Idbean ) {
 											that = undefined;
 											args = [ returned ];
 										}
@@ -3700,7 +3700,7 @@ jQuery.extend( {
 								newDefer,
 								jQuery.isFunction( onProgress ) ?
 									onProgress :
-									Identity,
+									Idbean,
 								newDefer.notifyWith
 							)
 						);
@@ -3712,7 +3712,7 @@ jQuery.extend( {
 								newDefer,
 								jQuery.isFunction( onFulfilled ) ?
 									onFulfilled :
-									Identity
+									Idbean
 							)
 						);
 

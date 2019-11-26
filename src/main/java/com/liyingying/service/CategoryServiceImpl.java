@@ -20,6 +20,5 @@ public class CategoryServiceImpl implements CategoryService {
 		// TODO Auto-generated method stub
 		return categoryMapper.listByChannelId(chnId);
 	}
-	
 
 }

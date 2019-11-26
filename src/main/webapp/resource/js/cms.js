@@ -66,7 +66,7 @@ $(function () {
       	  //获取点击的的url
           var url = $(this).attr('data');
           
-          console.log(url);
+        //  console.log(url);
          //在中间区域显示地址的内容
           $('#center').load(url);
 

@@ -14,5 +14,4 @@ public interface CategoryMapper {
 	List<Category> listByChannelId(int chnId);
 	
 
-	
 }
